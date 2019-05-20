@@ -1,9 +1,34 @@
 class LRUCache(object):
+
     def __init__(self, capacity):
-        pass
+        self.cache = {}
+        self.item_list = []
+        self.capacity = capacity
 
-    def get(self, key):
-        pass
+    def get_item(self, key):
+        if key in self.cache:
+            item_idx = self.item_list.index(key)
+            self.item_list[:] = self.item_list[:item_idx] + \
+                self.item_list[item_idx + 1:]
+            self.item_list.insert(0, key)
+            return self.cache[key]
 
-    def set(self, key, value):
-        pass
+        return -1
+
+
+    def set_item(self, key, value):
+        if key in self.cache:
+            item_idx = self.item_list.index(key)
+            self.item_list[:] = self.item_list[:item_idx] + \
+                self.item_list[item_idx + 1:]
+            self.item_list.insert(0, key)
+        else:
+            if len(self.item_list) > self.capacity:
+                self.remove_item(self.item_list[-1])
+            self.cache[key] = value
+            self.item_list.insert(0, key)
+
+
+    def remove_item(self, key):
+        del self.hash[key]
+        del self.item_list[self.item_list.index(key)]
