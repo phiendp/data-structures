@@ -3,14 +3,26 @@ import hashlib
 
 
 class Node:
-
     def __init__(self, block, previous=None):
         self.block = block
         self.previous = previous
 
 
-class BlockChain:
+class Block:
+    def __init__(self, data, previous_hash):
+        self.timestamp = datetime.datetime.utcnow()
+        self.data = data
+        self.previous_hash = previous_hash
+        self.hash = self.calc_hash(self.data)
 
+    def calc_hash(self, data):
+        sha = hashlib.sha256()
+        hash_str = data.encode('utf-8')
+        sha.update(hash_str)
+        return sha.hexdigest()
+
+
+class BlockChain:
     def __init__(self):
         self.head = None
         self.tail = None
@@ -30,21 +42,6 @@ class BlockChain:
             block.previous_hash = self.tail.block.hash
 
         self.tail = node
-
-
-class Block:
-
-    def __init__(self, data, previous_hash):
-        self.timestamp = datetime.datetime.utcnow()
-        self.data = data
-        self.previous_hash = previous_hash
-        self.hash = self.calc_hash(self.data)
-
-    def calc_hash(self, data):
-        sha = hashlib.sha256()
-        hash_str = data.encode('utf-8')
-        sha.update(hash_str)
-        return sha.hexdigest()
 
 
 def test_blockchain():
