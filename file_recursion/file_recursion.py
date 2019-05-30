@@ -1,6 +1,5 @@
 import os
 
-
 def find_files_recursive(suffix_files, suffix, path):
    if os.path.isfile(path):
       if path.endswith(suffix):
