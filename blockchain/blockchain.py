@@ -55,6 +55,7 @@ def test_blockchain():
     chain.add_block("Add new data")
     assert chain.tail != chain.head
     assert chain.tail.block.previous_hash != None
+
     second_block_hash = chain.tail.block.hash
     second_block_prev_hash = chain.tail.block.previous_hash
     assert first_block_hash == second_block_prev_hash

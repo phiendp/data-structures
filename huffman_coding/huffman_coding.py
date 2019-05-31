@@ -139,6 +139,27 @@ def test_2():
     print("The content of the encoded data is: {}\n".format(decoded_data))
 
 
+def test_3():
+    test_sentence = "Algorithm and data structure is fun!"
+
+    print("The size of the data is: {}\n".format(
+        sys.getsizeof(test_sentence)))
+    print("The content of the data is: {}\n".format(test_sentence))
+
+    encoded_data, tree = huffman_encoding(test_sentence)
+
+    print("The size of the encoded data is: {}\n".format(
+        sys.getsizeof(int(encoded_data, base=2))))
+    print("The content of the encoded data is: {}\n".format(encoded_data))
+
+    decoded_data = huffman_decoding(encoded_data, tree)
+
+    print("The size of the decoded data is: {}\n".format(
+        sys.getsizeof(decoded_data)))
+    print("The content of the encoded data is: {}\n".format(decoded_data))
+
+
 if __name__ == "__main__":
     test_1()
     test_2()
+    test_3()

@@ -123,7 +123,7 @@ def test_3():
     linked_list_1 = LinkedList()
     linked_list_2 = LinkedList()
 
-    element_1 = []
+    element_1 = [1, 2, 3]
     element_2 = []
 
     for i in element_1:
@@ -141,7 +141,7 @@ def test_4():
     linked_list_1 = LinkedList()
     linked_list_2 = LinkedList()
 
-    element_1 = [1, 2, 3]
+    element_1 = []
     element_2 = []
 
     for i in element_1:
@@ -152,6 +152,8 @@ def test_4():
 
     print(union(linked_list_1, linked_list_2))
     print(intersection(linked_list_1, linked_list_2))
+
+
 
 
 if __name__ == "__main__":
