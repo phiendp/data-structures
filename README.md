@@ -6,7 +6,7 @@ Implementation of some popular data structures and problem solving on those data
 ## List of Problems
 - [x] LRU cache
 - [x] File Recursion
-- [ ] Huffman Coding
+- [x] Huffman Coding
 - [x] Active Directory
 - [x] Blockchain
-- [ ] Union and Intersection of Two Linked Lists
+- [x] Union and Intersection of Two Linked Lists
