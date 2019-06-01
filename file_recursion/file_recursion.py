@@ -36,19 +36,19 @@ def find_files(suffix, path):
 
 
 def test_cases():
-   assert sorted(find_files('.h', './testdir')) == ['./testdir/subdir1/a.h',
-                                                   './testdir/subdir3/subsubdir1/b.h', './testdir/subdir5/a.h', './testdir/t1.h']
+   print("Print all files with .c extension")
+   print(find_files(".c", "testdir"))
+   print()
 
-   assert sorted(find_files('.c', './testdir')) == ['./testdir/subdir1/a.c',
-                                                   './testdir/subdir3/subsubdir1/b.c', './testdir/subdir5/a.c', './testdir/t1.c']
+   print("Print all file with .h extension")
+   print(find_files(".h", "testdir"))
+   print()
 
+   print("Print all the files in the directory")
+   print()
 
-   assert sorted(find_files('.h', './testdir/subdir3/subsubdir1/b.h')
-               ) == ['./testdir/subdir3/subsubdir1/b.h']
-
-   assert sorted(find_files('.c', './testdir/subdir3/subsubdir1/b.h')) == []
-
-   return 'Test passed!'
+   print(find_files("", "testdir"))
+   print(find_files(None, "testdir"))
 
 
 if __name__ == "__main__":

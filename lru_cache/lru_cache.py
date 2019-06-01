@@ -82,7 +82,7 @@ class LRUCache:
         self.queue.tail = node
         self.queue.tail.next = None
 
-    def get_item(self, key):
+    def get_item(self, key=None):
         """
         Get operation:
         - If cache hit, update the node's position in the queue, then return its value.
@@ -136,6 +136,7 @@ def test_LRU():
     cache.set_item(5, 5)
     cache.set_item(6, 6)
 
+    assert cache.get_item() == -1
     assert cache.get_item(1) == -1
     assert cache.get_item(6) == 6
     assert cache.get_item(5) == 5

@@ -159,7 +159,25 @@ def test_3():
     print("The content of the encoded data is: {}\n".format(decoded_data))
 
 
+def test_4():
+    test_sentence = ''
+    print("The content of the encoded data is: {}\n".format(test_sentence))
+
+    encoded_data, tree = huffman_encoding(test_sentence)
+    print("The content of the encoded data is: {}\n".format(encoded_data))
+
+    # Encoded data should be empty
+    assert encoded_data == '' and tree == None
+
+
+    second_sentence = None
+    encoded_data, tree = huffman_encoding(second_sentence)
+    # Encoded data should be None
+    assert encoded_data == None and tree == None
+
+
 if __name__ == "__main__":
     test_1()
     test_2()
     test_3()
+    test_4()

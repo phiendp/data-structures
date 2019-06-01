@@ -11,4 +11,4 @@ In both problems, a set will be used since it can help eliminate the duplication
 ## Analysis
 Let N be the number of elements in both linked lists.
 - The time complexity will be O(N), since we will need to traverse both the list for both union and intersection operation.
-- The space complexity both union and intersection will be O(N)
+- The space complexity both union and intersection will also be O(N) with N as the number of elements in both lists, since we will need to store both lists' elements on the set and the resulted linked list in the worst case.
